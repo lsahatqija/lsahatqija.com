@@ -78,7 +78,7 @@ export function ProjectsCarousel({ projects }: { projects: Project[] }) {
           <h3>{selected.name}</h3>
         </div>
         <p>{selected.description}</p>
-        <a className="text-link" href={selected.href}>
+        <a className="text-link" href={selected.href} target="_blank" rel="noreferrer">
           Visit project <ExternalLink aria-hidden="true" />
         </a>
       </article>

@@ -15,5 +15,6 @@ describe("ProjectsCarousel", () => {
     expect(
       within(screen.getByRole("article")).getByRole("heading", { name: "Project Two" }),
     ).toBeVisible();
+    expect(screen.getByRole("link", { name: /Visit project/ })).toHaveAttribute("target", "_blank");
   });
 });

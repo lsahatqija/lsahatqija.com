@@ -69,7 +69,7 @@ export default function Home() {
             </div>
             <div className="link-list">
               {personalLinks.map((link) => (
-                <a key={link.label} href={link.href}>
+                <a key={link.label} href={link.href} target="_blank" rel="noreferrer">
                   <span>{link.label}</span>
                   <small>{link.description}</small>
                   <ArrowUpRight aria-hidden="true" />
@@ -81,7 +81,12 @@ export default function Home() {
           <section id="contact" className="outro-section" aria-labelledby="outro-title">
             <p className="eyebrow">One more thing</p>
             <h2 id="outro-title">Have something interesting in mind?</h2>
-            <a className="contact-link" href="mailto:hello@lsahatqija.com">
+            <a
+              className="contact-link"
+              href="mailto:hello@lsahatqija.com"
+              target="_blank"
+              rel="noreferrer"
+            >
               <Mail aria-hidden="true" /> hello@lsahatqija.com
             </a>
           </section>
