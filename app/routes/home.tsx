@@ -1,8 +1,9 @@
 import { ArrowDown, ArrowUpRight, Mail } from "lucide-react";
 
+import { ExperienceList } from "~/components/experience-list";
 import { ProjectsCarousel } from "~/components/projects-carousel";
 import { SiteHeader } from "~/components/site-header";
-import { personalLinks, projects } from "~/content/site";
+import { experiences, personalLinks, projects } from "~/content/site";
 
 export default function Home() {
   return (
@@ -43,9 +44,24 @@ export default function Home() {
             <ProjectsCarousel projects={projects} />
           </section>
 
-          <section id="links" className="links-section" aria-labelledby="links-title">
+          <section
+            id="experience"
+            className="experience-section"
+            aria-labelledby="experience-title"
+          >
             <div className="section-heading">
               <p className="section-number">02</p>
+              <div>
+                <p className="eyebrow">Experience</p>
+                <h2 id="experience-title">Work beyond this portfolio.</h2>
+              </div>
+            </div>
+            <ExperienceList experiences={experiences} />
+          </section>
+
+          <section id="links" className="links-section" aria-labelledby="links-title">
+            <div className="section-heading">
+              <p className="section-number">03</p>
               <div>
                 <p className="eyebrow">Elsewhere</p>
                 <h2 id="links-title">Find me around the web.</h2>

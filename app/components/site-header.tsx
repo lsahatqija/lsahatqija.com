@@ -6,6 +6,7 @@ import { useTheme } from "~/features/preferences/theme-provider";
 const navigation = [
   { label: "About", href: "#about" },
   { label: "Projects", href: "#projects" },
+  { label: "Experience", href: "#experience" },
   { label: "Links", href: "#links" },
 ];
 

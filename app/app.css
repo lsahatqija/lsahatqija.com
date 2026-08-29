@@ -177,9 +177,87 @@ main > section {
   width: 1rem;
 }
 .projects-section,
+.experience-section,
 .links-section {
   padding: 7rem 0;
   border-bottom: 1px solid var(--border);
+}
+.experience-list {
+  max-height: min(32rem, 70vh);
+  margin-left: 5rem;
+  overflow-y: auto;
+  border-top: 1px solid var(--border);
+  scrollbar-color: var(--accent) transparent;
+}
+.experience-item {
+  border-bottom: 1px solid var(--border);
+}
+.experience-item summary {
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  align-items: center;
+  gap: 1.25rem;
+  min-height: 7rem;
+  padding: 1rem 0.75rem 1rem 0;
+  cursor: pointer;
+  list-style: none;
+}
+.experience-item summary::-webkit-details-marker {
+  display: none;
+}
+.experience-item summary:focus-visible {
+  outline: 3px solid var(--accent);
+  outline-offset: -3px;
+}
+.experience-icon {
+  display: grid;
+  width: 3rem;
+  height: 3rem;
+  place-items: center;
+  border: 1px solid var(--border);
+  border-radius: 50%;
+  background: var(--surface);
+}
+.experience-icon svg,
+.experience-link svg {
+  width: 1.15rem;
+}
+.experience-item summary > span:nth-child(2) {
+  display: grid;
+  gap: 0.25rem;
+}
+.experience-item strong {
+  font-size: clamp(1.15rem, 2vw, 1.6rem);
+}
+.experience-item small {
+  color: var(--muted-foreground);
+  font-size: 0.75rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+.experience-link {
+  display: grid;
+  width: 2.75rem;
+  height: 2.75rem;
+  place-items: center;
+  border-radius: 50%;
+  transition:
+    color 160ms ease,
+    background 160ms ease,
+    transform 160ms ease;
+}
+.experience-link:hover,
+.experience-link:focus-visible {
+  color: var(--background);
+  background: var(--foreground);
+  transform: translate(0.15rem, -0.15rem);
+}
+.experience-item > p {
+  max-width: 52rem;
+  margin: 0;
+  padding: 0 4.5rem 1.75rem 4.25rem;
+  color: var(--muted-foreground);
+  line-height: 1.65;
 }
 .section-heading {
   display: grid;
@@ -402,6 +480,7 @@ footer p {
     justify-self: start;
   }
   .projects-section,
+  .experience-section,
   .links-section {
     padding: 5rem 0;
   }
@@ -410,8 +489,16 @@ footer p {
     margin-bottom: 2.5rem;
   }
   .project-browser,
+  .experience-list,
   .link-list {
     margin-left: 0;
+  }
+  .experience-item summary {
+    gap: 0.8rem;
+    min-height: 6rem;
+  }
+  .experience-item > p {
+    padding: 0 3.5rem 1.5rem 3.8rem;
   }
   .project-track {
     grid-auto-columns: minmax(14rem, 80%);
