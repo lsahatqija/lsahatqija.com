@@ -9,6 +9,18 @@ export default tseslint.config(
     ignores: [".react-router", "build", "coverage", "node_modules", "playwright-report"],
   },
   js.configs.recommended,
+  {
+    files: ["dark-graphic-kit/**/*.js"],
+    languageOptions: {
+      globals: {
+        clearTimeout: "readonly",
+        document: "readonly",
+        ResizeObserver: "readonly",
+        setTimeout: "readonly",
+        window: "readonly",
+      },
+    },
+  },
   ...tseslint.configs.recommended,
   ...tseslint.configs.recommendedTypeChecked.map((config) => ({
     ...config,

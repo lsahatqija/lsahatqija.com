@@ -1,0 +1,49 @@
+<!-- Copy individual examples into your page with styles.css loaded. -->
+
+<!-- Accent outline button; replace href with your actual destination. -->
+<a class="dg-button tone-teal" href="#projects">Explore projects
+  <svg class="dg-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true"><path d="M4 12h16m-6-6 6 6-6 6"/></svg>
+</a>
+
+<!-- Native button: type=button avoids submitting a surrounding form. -->
+<button class="dg-button filled" type="button">Primary action</button>
+<span class="badge tone-gold">Developer tools</span>
+
+<!-- Panel -->
+<article class="dg-frame panel tone-teal">
+  <p class="eyebrow">Category</p>
+  <h3>Panel title</h3>
+  <p>Your content.</p>
+</article>
+
+<!-- Form fields: each control has an associated label. -->
+<label>Email<input type="email" name="email" autocomplete="email" required></label>
+<label class="switch"><input type="checkbox" role="switch"><span></span>Notifications</label>
+
+<!-- Disclosure -->
+<details><summary>Question</summary><p>Your answer.</p></details>
+
+<!-- Decorative circuit divider -->
+<div class="circuit-divider tone-teal" aria-hidden="true"></div>
+
+<!-- Accessible icon-only control (inline version works from file://). -->
+<button class="dg-button icon-only tone-gold" type="button" aria-label="Add item">
+  <svg class="dg-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true"><path d="M12 4v16M4 12h16"/></svg>
+</button>
+
+<!-- Carousel: include script.js once. Use unique IDs if adding more copies. -->
+<section data-carousel aria-label="Featured projects">
+  <div class="section-heading">
+    <h2>Featured projects</h2>
+    <div class="carousel-controls">
+      <span data-counter class="counter" aria-live="polite">01 / 03</span>
+      <button class="dg-button icon-only" data-prev type="button" aria-label="Previous project">←</button>
+      <button class="dg-button icon-only" data-next type="button" aria-label="Next project">→</button>
+    </div>
+  </div>
+  <div class="carousel-track" data-track tabindex="0" aria-label="Projects. Use arrow keys to browse.">
+    <article class="project-card dg-frame panel tone-teal"><h3>Project one</h3><p>Description.</p></article>
+    <article class="project-card dg-frame panel tone-gold"><h3>Project two</h3><p>Description.</p></article>
+    <article class="project-card dg-frame panel tone-pink"><h3>Project three</h3><p>Description.</p></article>
+  </div>
+</section>
