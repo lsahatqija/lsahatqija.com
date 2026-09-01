@@ -1,8 +1,3 @@
-import { Moon, Sun } from "lucide-react";
-
-import { Button } from "~/components/ui/button";
-import { useTheme } from "~/features/preferences/theme-provider";
-
 const navigation = [
   { label: "About", href: "#about" },
   { label: "Projects", href: "#projects" },
@@ -11,12 +6,11 @@ const navigation = [
 ];
 
 export function SiteHeader() {
-  const { resolvedTheme, toggleTheme } = useTheme();
-
   return (
-    <header className="site-header">
-      <a className="wordmark" href="#top" aria-label="lsahatqija.com, back to top">
-        lsa<span>hatqija</span>
+    <header id="top" className="site-header shell">
+      <a className="wordmark" href="#top" aria-label="Lekë Sahatqija, back to top">
+        Lekë Sahatqija
+        <span className="circuit-mark" aria-hidden="true" />
       </a>
       <nav aria-label="Primary navigation">
         {navigation.map((item) => (
@@ -25,15 +19,6 @@ export function SiteHeader() {
           </a>
         ))}
       </nav>
-      <Button
-        className="theme-toggle"
-        variant="ghost"
-        size="icon"
-        onClick={toggleTheme}
-        aria-label={`Switch to ${resolvedTheme === "dark" ? "light" : "dark"} theme`}
-      >
-        {resolvedTheme === "dark" ? <Sun aria-hidden="true" /> : <Moon aria-hidden="true" />}
-      </Button>
     </header>
   );
 }

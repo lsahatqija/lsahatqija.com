@@ -1,87 +1,100 @@
-import { ArrowLeft, ArrowRight, ExternalLink } from "lucide-react";
+import { ArrowLeft, ArrowRight, Code2, Gamepad2, Globe2, Radio } from "lucide-react";
 import { useRef, useState } from "react";
-
-import { Button } from "~/components/ui/button";
 import type { Project } from "~/content/site";
-import { cn } from "~/lib/utils";
+
+const icons = [Gamepad2, Radio, Code2, Globe2];
+const tones = ["tone-teal", "tone-gold", "tone-pink", "tone-teal"];
 
 export function ProjectsCarousel({ projects }: { projects: Project[] }) {
-  const [selectedId, setSelectedId] = useState(projects[0]?.id ?? "");
   const trackRef = useRef<HTMLDivElement>(null);
-  const selected = projects.find((project) => project.id === selectedId) ?? projects[0];
-
-  const scroll = (direction: -1 | 1) => {
+  const [index, setIndex] = useState(0);
+  const update = () => {
     const track = trackRef.current;
-    if (!track) return;
-    track.scrollBy({
-      left: direction * Math.min(track.clientWidth * 0.75, 520),
-      behavior: "smooth",
-    });
+    if (!track?.children.length) return;
+    const step = (track.children[0] as HTMLElement).offsetWidth + 22;
+    const atEnd = track.scrollLeft >= track.scrollWidth - track.clientWidth - 2;
+    setIndex(
+      atEnd
+        ? projects.length - 1
+        : Math.min(projects.length - 1, Math.round(track.scrollLeft / step)),
+    );
   };
-
-  if (!selected) return null;
-
+  const move = (direction: -1 | 1) => {
+    const track = trackRef.current;
+    const card = track?.children[0] as HTMLElement | undefined;
+    if (track && card)
+      track.scrollBy({ left: direction * (card.offsetWidth + 22), behavior: "smooth" });
+  };
   return (
-    <div className="project-browser">
-      <div className="carousel-heading">
-        <p className="eyebrow">Selected work</p>
-        <div className="carousel-controls" aria-label="Carousel controls">
-          <Button
-            variant="outline"
-            size="icon"
-            onClick={() => scroll(-1)}
-            aria-label="Previous projects"
+    <>
+      <div className="section-heading">
+        <h2 id="projects-title">Selected projects</h2>
+        <span className="heading-line" aria-hidden="true" />
+        <div className="carousel-controls">
+          <span className="counter" aria-live="polite">
+            {String(index + 1).padStart(2, "0")} / {String(projects.length).padStart(2, "0")}
+          </span>
+          <button
+            className="dg-button icon-only tone-gold"
+            type="button"
+            onClick={() => move(-1)}
+            disabled={index === 0}
+            aria-label="Previous project"
           >
             <ArrowLeft aria-hidden="true" />
-          </Button>
-          <Button
-            variant="outline"
-            size="icon"
-            onClick={() => scroll(1)}
-            aria-label="Next projects"
+          </button>
+          <button
+            className="dg-button icon-only"
+            type="button"
+            onClick={() => move(1)}
+            disabled={index === projects.length - 1}
+            aria-label="Next project"
           >
             <ArrowRight aria-hidden="true" />
-          </Button>
+          </button>
         </div>
       </div>
-
-      <div ref={trackRef} className="project-track" role="list" aria-label="Projects">
-        {projects.map((project) => {
-          const isSelected = project.id === selected.id;
+      <div
+        ref={trackRef}
+        className="carousel-track"
+        role="list"
+        aria-label="Projects"
+        onScroll={update}
+      >
+        {projects.map((project, projectIndex) => {
+          const Icon = icons[projectIndex % icons.length];
           return (
-            <div key={project.id} role="listitem">
-              <button
-                className={cn("project-tile", isSelected && "is-selected")}
-                type="button"
-                aria-expanded={isSelected}
-                aria-controls="project-details"
-                onClick={() => setSelectedId(project.id)}
-              >
-                <span
-                  className="project-mark"
-                  style={{ backgroundColor: project.color }}
-                  aria-hidden="true"
-                >
-                  {project.mark}
+            <article
+              className={`project-card dg-frame ${tones[projectIndex % tones.length]}`}
+              key={project.id}
+              role="listitem"
+            >
+              <div className="project-art" aria-hidden="true">
+                <span className="art-index">
+                  {String(projectIndex + 1).padStart(2, "0")} / PROJECT
                 </span>
-                <span className="project-name">{project.name}</span>
-                <span className="project-label">{project.label}</span>
-              </button>
-            </div>
+                <Icon />
+                <span className="art-title">{project.name}</span>
+                <span className="art-circuit" />
+              </div>
+              <div className="project-info">
+                <span className="icon-badge">
+                  <Icon />
+                </span>
+                <div>
+                  <h3>{project.name}</h3>
+                  <span className="project-category">{project.label}</span>
+                </div>
+              </div>
+              <p className="project-description">{project.description}</p>
+              <a className="project-link" href={project.href}>
+                Explore project <ArrowRight aria-hidden="true" />
+              </a>
+            </article>
           );
         })}
       </div>
-
-      <article id="project-details" className="project-details" aria-live="polite">
-        <div>
-          <p className="eyebrow">{selected.label}</p>
-          <h3>{selected.name}</h3>
-        </div>
-        <p>{selected.description}</p>
-        <a className="text-link" href={selected.href} target="_blank" rel="noreferrer">
-          Visit project <ExternalLink aria-hidden="true" />
-        </a>
-      </article>
-    </div>
+      <p className="caption">Scroll or use the arrows to explore.</p>
+    </>
   );
 }

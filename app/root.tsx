@@ -9,7 +9,6 @@ import {
 
 import type { Route } from "./+types/root";
 import { Button } from "./components/ui/button";
-import { ThemeProvider } from "./features/preferences/theme-provider";
 import "./app.css";
 
 export const links: Route.LinksFunction = () => [
@@ -22,7 +21,8 @@ export function Layout({ children }: { children: React.ReactNode }) {
       <head>
         <meta charSet="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <meta name="theme-color" content="#f4f1e9" />
+        <meta name="theme-color" content="#050506" />
+        <meta name="color-scheme" content="dark" />
         <Meta />
         <Links />
       </head>
@@ -44,11 +44,7 @@ export function HydrateFallback() {
 }
 
 export default function App() {
-  return (
-    <ThemeProvider>
-      <Outlet />
-    </ThemeProvider>
-  );
+  return <Outlet />;
 }
 
 export function ErrorBoundary({ error }: Route.ErrorBoundaryProps) {
