@@ -153,16 +153,34 @@ p {
   background: var(--dg-teal);
   content: "";
 }
-nav {
+.social-nav {
   display: flex;
   flex-wrap: wrap;
-  gap: clamp(18px, 3vw, 46px);
+  gap: 10px;
 }
-nav a {
-  font-weight: 700;
+.social-link {
+  display: inline-flex;
+  width: 42px;
+  height: 42px;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid var(--dg-line);
+  color: var(--dg-cream);
+  transition:
+    border-color 180ms ease,
+    background-color 180ms ease,
+    color 180ms ease,
+    transform 180ms ease;
 }
-nav a:hover {
-  color: var(--dg-pink);
+.social-link:hover {
+  border-color: var(--dg-teal);
+  background: rgb(34 206 187 / 12%);
+  color: var(--dg-teal);
+  transform: translateY(-2px);
+}
+.social-link svg {
+  width: 21px;
+  height: 21px;
 }
 .hero {
   display: grid;
@@ -198,6 +216,12 @@ nav a:hover {
   color: var(--dg-cream);
   font-size: clamp(1.1rem, 1.6vw, 1.45rem);
   font-weight: 600;
+}
+.hero-actions {
+  display: flex;
+  align-items: flex-start;
+  flex-direction: column;
+  gap: 12px;
 }
 .hero-avatar {
   display: block;
@@ -508,12 +532,34 @@ nav a:hover {
   height: 9px;
   background: var(--dg-teal);
 }
-.timeline .eyebrow {
+.timeline h3 {
+  color: var(--dg-cream);
+}
+.experience-details summary {
+  cursor: pointer;
+  list-style: none;
+}
+.experience-details summary::-webkit-details-marker {
+  display: none;
+}
+.experience-heading {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
   margin-bottom: 10px;
 }
-.timeline h3 {
-  margin-bottom: 10px;
-  color: var(--dg-cream);
+.experience-toggle {
+  width: 20px;
+  flex: 0 0 auto;
+  color: var(--dg-teal);
+  transition: transform 180ms ease;
+}
+.experience-details[open] .experience-toggle {
+  transform: rotate(180deg);
+}
+.experience-description {
+  margin-top: 18px;
 }
 .tech-list {
   display: flex;
@@ -526,6 +572,15 @@ nav a:hover {
   border: 1px solid var(--dg-line);
   color: var(--dg-muted);
   font-size: 0.7rem;
+  transition:
+    border-color 180ms ease,
+    background-color 180ms ease,
+    color 180ms ease;
+}
+.badge:hover {
+  border-color: var(--dg-teal);
+  background: rgb(34 206 187 / 12%);
+  color: var(--dg-teal);
 }
 .experience-link {
   display: inline-flex;

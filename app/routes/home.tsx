@@ -28,9 +28,14 @@ export default function Home() {
               Game maker<span>.</span>
             </h1>
             <p className="hero-summary">Web apps, games, and experiments.</p>
-            <a className="dg-button" href="#projects">
-              Explore projects <ArrowRight aria-hidden="true" />
-            </a>
+            <div className="hero-actions">
+              <a className="dg-button" href="#projects">
+                Explore projects <ArrowRight aria-hidden="true" />
+              </a>
+              <a className="dg-button tone-teal" href="#experience">
+                Explore experience <ArrowRight aria-hidden="true" />
+              </a>
+            </div>
             <div className="circuit-divider short" aria-hidden="true" />
           </div>
           <img
