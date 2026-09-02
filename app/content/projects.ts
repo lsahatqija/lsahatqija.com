@@ -11,12 +11,12 @@ export type Project = {
 // Replace these starter entries with the final project names, logos, copy, and URLs.
 export const projects: Project[] = [
   {
-    id: "project-one",
-    name: "Project One",
-    label: "Web application",
+    id: "project-crux",
+    name: "Crux",
+    label: "Steam game",
     description:
-      "A concise description of what this project does, who it is for, and why it is worth visiting.",
-    href: "#contact",
+      "Retro-styled FPS with roguelike elements. Explore a nightmare gauntlet, survive against hostile creatures, and compete for high scores.",
+    href: "https://store.steampowered.com/app/2293200/CRUX/",
     mark: "01",
     color: "#d84a38",
   },

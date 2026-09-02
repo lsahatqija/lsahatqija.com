@@ -87,7 +87,12 @@ export function ProjectsCarousel({ projects }: { projects: Project[] }) {
                 </div>
               </div>
               <p className="project-description">{project.description}</p>
-              <a className="project-link" href={project.href}>
+              <a
+                className="project-link"
+                href={project.href}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
                 Explore project <ArrowRight aria-hidden="true" />
               </a>
             </article>
