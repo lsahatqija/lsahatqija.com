@@ -30,10 +30,13 @@ export default function Home() {
             <p className="hero-summary">Web apps, games, and experiments.</p>
             <div className="hero-actions">
               <a className="dg-button" href="#projects">
-                Explore projects <ArrowRight aria-hidden="true" />
+                Projects <ArrowRight aria-hidden="true" />
               </a>
               <a className="dg-button tone-teal" href="#experience">
-                Explore experience <ArrowRight aria-hidden="true" />
+                Experience <ArrowRight aria-hidden="true" />
+              </a>
+              <a className="dg-button tone-gold" href="#links">
+                Links <ArrowRight aria-hidden="true" />
               </a>
             </div>
             <div className="circuit-divider short" aria-hidden="true" />
