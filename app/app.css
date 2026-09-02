@@ -159,28 +159,29 @@ p {
   gap: 10px;
 }
 .social-link {
-  display: inline-flex;
+  position: relative;
+  display: inline-grid;
   width: 42px;
   height: 42px;
-  align-items: center;
-  justify-content: center;
-  border: 1px solid var(--dg-line);
-  color: var(--dg-cream);
-  transition:
-    border-color 180ms ease,
-    background-color 180ms ease,
-    color 180ms ease,
-    transform 180ms ease;
+  place-items: center;
+  transition: transform 180ms ease;
 }
 .social-link:hover {
-  border-color: var(--dg-teal);
-  background: rgb(34 206 187 / 12%);
-  color: var(--dg-teal);
   transform: translateY(-2px);
 }
-.social-link svg {
-  width: 21px;
-  height: 21px;
+.social-link img {
+  position: absolute;
+  width: 42px;
+  height: 42px;
+  object-fit: contain;
+  transition: opacity 180ms ease;
+}
+.social-icon-hover,
+.social-link:hover .social-icon-default {
+  opacity: 0;
+}
+.social-link:hover .social-icon-hover {
+  opacity: 1;
 }
 .hero {
   display: grid;
@@ -567,7 +568,9 @@ p {
   gap: 7px;
 }
 .badge {
-  display: inline-block;
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
   padding: 4px 8px;
   border: 1px solid var(--dg-line);
   color: var(--dg-muted);
@@ -577,10 +580,21 @@ p {
     background-color 180ms ease,
     color 180ms ease;
 }
+.badge-icon {
+  width: 0.85rem;
+  height: 0.85rem;
+  flex: 0 0 auto;
+  object-fit: contain;
+  filter: invert(68%) sepia(8%) saturate(338%) hue-rotate(189deg) brightness(91%);
+  transition: filter 180ms ease;
+}
 .badge:hover {
   border-color: var(--dg-teal);
   background: rgb(34 206 187 / 12%);
   color: var(--dg-teal);
+}
+.badge:hover .badge-icon {
+  filter: invert(74%) sepia(62%) saturate(620%) hue-rotate(121deg) brightness(89%);
 }
 .experience-link {
   display: inline-flex;
