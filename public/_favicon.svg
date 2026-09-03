@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+  <title>Lekë Sahatqija — developer and game maker</title>
+  <rect width="64" height="64" rx="12" fill="#050506"/>
+  <path d="M15 16 5 32l10 16" fill="none" stroke="#22cebb" stroke-width="6" stroke-linecap="square" stroke-linejoin="miter"/>
+  <path d="m49 16 10 16-10 16" fill="none" stroke="#ffbe0b" stroke-width="6" stroke-linecap="square" stroke-linejoin="miter"/>
+  <path d="M24 15v27h16" fill="none" stroke="#f8e7cb" stroke-width="7" stroke-linecap="square" stroke-linejoin="miter"/>
+  <circle cx="40" cy="42" r="5" fill="#f50057"/>
+</svg>
