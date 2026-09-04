@@ -1,8 +1,14 @@
-import { ArrowLeft, ArrowRight, Code2, Gamepad2, Globe2, Radio } from "lucide-react";
+import { AppWindow, ArrowLeft, ArrowRight, Code2, Gamepad2, Globe2, Radio } from "lucide-react";
 import { useRef, useState } from "react";
 import type { Project } from "~/content/site";
 
-const icons = [Gamepad2, Radio, Code2, Globe2];
+const icons = {
+  app: AppWindow,
+  code: Code2,
+  gamepad: Gamepad2,
+  globe: Globe2,
+  radio: Radio,
+};
 const tones = ["tone-teal", "tone-gold", "tone-pink", "tone-teal"];
 
 export function ProjectsCarousel({ projects }: { projects: Project[] }) {
@@ -62,7 +68,7 @@ export function ProjectsCarousel({ projects }: { projects: Project[] }) {
         onScroll={update}
       >
         {projects.map((project, projectIndex) => {
-          const Icon = icons[projectIndex % icons.length];
+          const Icon = icons[project.icon];
           return (
             <article
               className={`project-card dg-frame ${tones[projectIndex % tones.length]}`}

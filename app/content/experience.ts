@@ -39,7 +39,7 @@ export const experiences: Experience[] = [
       "VR",
       "Mixed Reality",
     ],
-    href: "",
+    href: "https://yoloway.ai/",
   },
   {
     id: "aab-professor",
@@ -54,7 +54,7 @@ export const experiences: Experience[] = [
       "Curriculum Development",
       "Academic Mentoring",
     ],
-    href: "",
+    href: "https://aab-edu.net/",
   },
   {
     id: "witcc-adjunct-professor",
@@ -70,7 +70,7 @@ export const experiences: Experience[] = [
       "Curriculum Development",
       "Remote Teaching",
     ],
-    href: "",
+    href: "https://www.witcc.edu/",
   },
   {
     id: "linkplus-senior-unity-developer",
@@ -86,7 +86,7 @@ export const experiences: Experience[] = [
       "Automotive Software",
       "Technical Documentation",
     ],
-    href: "",
+    href: "https://linkplus-it.com/",
   },
   {
     id: "zonda-game-developer",
@@ -103,7 +103,7 @@ export const experiences: Experience[] = [
       "Real-Time 3D",
       "Mobile Game Development",
     ],
-    href: "",
+    href: "https://zondacreative.com/",
   },
   {
     id: "blackout-software-developer",

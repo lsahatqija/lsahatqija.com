@@ -122,10 +122,10 @@ p {
 }
 .site-header {
   display: flex;
-  min-height: 100px;
+  min-height: 80px;
   align-items: center;
   justify-content: space-between;
-  gap: 24px;
+  gap: 12px;
 }
 .wordmark {
   position: relative;
@@ -320,8 +320,8 @@ p {
   content: "";
 }
 .projects {
-  padding-top: 24px;
-  padding-bottom: 60px;
+  padding-top: 6px;
+  padding-bottom: 42px;
 }
 .section-heading {
   display: flex;
@@ -781,7 +781,7 @@ p {
     grid-template-columns: 1fr;
   }
   .hero-copy {
-    padding-top: 16px;
+    padding-top: 8px;
   }
   .hero h1 {
     font-size: clamp(3rem, 12vw, 4.5rem);

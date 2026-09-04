@@ -4,6 +4,7 @@ export type Project = {
   label: string;
   description: string;
   href: string;
+  icon: "gamepad" | "radio" | "code" | "globe" | "app";
   mark: string;
   color: string;
 };
@@ -17,37 +18,62 @@ export const projects: Project[] = [
     description:
       "Retro-styled FPS with roguelike elements. Explore a nightmare gauntlet, survive against hostile creatures, and compete for high scores.",
     href: "https://store.steampowered.com/app/2293200/CRUX/",
+    icon: "gamepad",
     mark: "01",
     color: "#d84a38",
   },
   {
-    id: "project-two",
-    name: "Project Two",
-    label: "Digital product",
+    id: "project-raidio",
+    name: "RaidiantFM",
+    label: "Experiment",
     description:
-      "Use this space to explain the central idea behind the project and the problem it solves.",
-    href: "#contact",
+      "A full-stack web app that adds radio-style personalized commentary to your Spotify playlists.",
+    href: "https://github.com/lsahatqija/raidiohost-webplayer, https://github.com/lsahatqija/raidiohost-node",
+    icon: "radio",
     mark: "02",
+    color: "#8f4f8f",
+  },
+  {
+    id: "project-arbarea",
+    name: "Heroes of Arbarea",
+    label: "Steam game",
+    description:
+      "A work-in-progress idle party-based RPG set in the fantasy world of Arbarea and lives on your taskbar as an overlay.",
+    href: "#contact",
+    icon: "gamepad",
+    mark: "04",
+    color: "#8f4f8f",
+  },
+  {
+    id: "project-evosystem",
+    name: "Evosystem",
+    label: "Experiment",
+    description:
+      "An experimental simulation of an evolving ecosystem, where creatures adapt and evolve over time while making real-time decisions based on their own observations of the world, built on Unity using GOAP.",
+    href: "https://github.com/lsahatqija/evosystem",
+    icon: "code",
+    mark: "03",
+    color: "#8f4f8f",
+  },
+
+  {
+    id: "project-expensify",
+    name: "Expensify",
+    label: "Digital product",
+    description: "A work-in-progress web app for tracking expenses and managing budgets.",
+    href: "#contact",
+    icon: "app",
+    mark: "05",
     color: "#177d67",
   },
   {
-    id: "project-three",
-    name: "Project Three",
+    id: "project-medikeep",
+    name: "MediKeep",
     label: "Website",
-    description:
-      "Keep project summaries short and specific. The destination link can point to any external site.",
+    description: "A work-in-progress web app for managing medical records and appointments.",
     href: "#contact",
-    mark: "03",
+    icon: "app",
+    mark: "06",
     color: "#315ca8",
-  },
-  {
-    id: "project-four",
-    name: "Project Four",
-    label: "Experiment",
-    description:
-      "This starter card demonstrates how the carousel behaves when more projects are added.",
-    href: "#contact",
-    mark: "04",
-    color: "#8f4f8f",
   },
 ];
