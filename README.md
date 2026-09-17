@@ -25,4 +25,6 @@ corepack pnpm test:e2e
 
 ## Deployment
 
-Deploy `build/client` to any static host. Unknown paths must rewrite to `/index.html` so the client-side 404 route can render. The included Dockerfile and Nginx configuration demonstrate that hosting contract.
+Production deploys use Netlify. Import the repository and Netlify will use `netlify.toml` to build and publish `build/client`, including the SPA fallback and response headers. See `docs/deployment.md` for the initial domain setup.
+
+The included Dockerfile and Nginx configuration remain available as a self-hosted alternative.
