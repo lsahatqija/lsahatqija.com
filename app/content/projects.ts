@@ -28,7 +28,7 @@ export const projects: Project[] = [
     label: "Experiment",
     description:
       "A full-stack web app that adds radio-style personalized commentary to your Spotify playlists.",
-    href: "https://github.com/lsahatqija/raidiohost-webplayer, https://github.com/lsahatqija/raidiohost-node",
+    href: "https://github.com/lsahatqija/raidiohost-webplayer", //https://github.com/lsahatqija/raidiohost-node
     icon: "radio",
     mark: "02",
     color: "#8f4f8f",
@@ -39,7 +39,7 @@ export const projects: Project[] = [
     label: "Steam game",
     description:
       "A work-in-progress idle party-based RPG set in the fantasy world of Arbarea and lives on your taskbar as an overlay.",
-    href: "#contact",
+    href: "https://lsah.itch.io/heroes-of-arbarea",
     icon: "gamepad",
     mark: "04",
     color: "#8f4f8f",
@@ -51,7 +51,7 @@ export const projects: Project[] = [
     description:
       "An experimental simulation of an evolving ecosystem, where creatures adapt and evolve over time while making real-time decisions based on their own observations of the world, built on Unity using GOAP.",
     href: "https://github.com/lsahatqija/evosystem",
-    icon: "code",
+    icon: "globe",
     mark: "03",
     color: "#8f4f8f",
   },
@@ -61,8 +61,8 @@ export const projects: Project[] = [
     name: "Expensify",
     label: "Digital product",
     description: "A work-in-progress web app for tracking expenses and managing budgets.",
-    href: "#contact",
-    icon: "app",
+    href: "",
+    icon: "code",
     mark: "05",
     color: "#177d67",
   },
@@ -71,7 +71,7 @@ export const projects: Project[] = [
     name: "MediKeep",
     label: "Website",
     description: "A work-in-progress web app for managing medical records and appointments.",
-    href: "#contact",
+    href: "",
     icon: "app",
     mark: "06",
     color: "#315ca8",
