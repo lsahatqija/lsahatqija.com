@@ -1,8 +1,10 @@
 import { personalLinks } from "~/content/site";
 
+import cvIcon from "../../dark-graphic-kit/icons/monochrome/cv.svg";
 import emailIcon from "../../dark-graphic-kit/icons/monochrome/email.svg";
 import githubIcon from "../../dark-graphic-kit/icons/monochrome/github.svg";
 import linkedinIcon from "../../dark-graphic-kit/icons/monochrome/linkedin.svg";
+import cvIconTeal from "../../dark-graphic-kit/icons/teal/cv.svg";
 import emailIconTeal from "../../dark-graphic-kit/icons/teal/email.svg";
 import githubIconTeal from "../../dark-graphic-kit/icons/teal/github.svg";
 import linkedinIconTeal from "../../dark-graphic-kit/icons/teal/linkedin.svg";
@@ -40,6 +42,16 @@ export function SiteHeader() {
             </a>
           );
         })}
+        <a
+          className="social-link"
+          href="/leke-sahatqija-cv.pdf"
+          download="Leke-Sahatqija-CV.pdf"
+          aria-label="Download CV"
+          title="Download CV"
+        >
+          <img className="social-icon-default" src={cvIcon} alt="" aria-hidden="true" />
+          <img className="social-icon-hover" src={cvIconTeal} alt="" aria-hidden="true" />
+        </a>
       </nav>
     </header>
   );

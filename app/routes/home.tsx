@@ -1,4 +1,4 @@
-import { ArrowRight, ArrowUpRight, Mail } from "lucide-react";
+import { ArrowRight, ArrowUpRight, Download, Mail } from "lucide-react";
 import { ExperienceList } from "~/components/experience-list";
 import { ProjectsCarousel } from "~/components/projects-carousel";
 import { SiteHeader } from "~/components/site-header";
@@ -37,6 +37,13 @@ export default function Home() {
               </a>
               <a className="dg-button tone-gold" href="#links">
                 Links <ArrowRight aria-hidden="true" />
+              </a>
+              <a
+                className="dg-button"
+                href="/leke-sahatqija-cv.pdf"
+                download="Leke-Sahatqija-CV.pdf"
+              >
+                Download CV <Download aria-hidden="true" />
               </a>
             </div>
             <div className="circuit-divider short" aria-hidden="true" />
@@ -84,6 +91,35 @@ export default function Home() {
                 <ArrowUpRight aria-hidden="true" />
               </a>
             ))}
+            <a
+              className="dg-frame link-card"
+              href="/leke-sahatqija-cv.pdf"
+              download="Leke-Sahatqija-CV.pdf"
+            >
+              <span className="link-index">
+                {String(personalLinks.length + 1).padStart(2, "0")}
+              </span>
+              <span>
+                <strong>Download CV</strong>
+                <small>PDF résumé</small>
+              </span>
+              <Download aria-hidden="true" />
+            </a>
+            <a
+              className="dg-frame link-card"
+              href="https://lsah.itch.io"
+              target="_blank"
+              rel="noreferrer"
+            >
+              <span className="link-index">
+                {String(personalLinks.length + 2).padStart(2, "0")}
+              </span>
+              <span>
+                <strong>itch.io</strong>
+                <small>Games and experiments</small>
+              </span>
+              <ArrowUpRight aria-hidden="true" />
+            </a>
           </div>
         </section>
         <section className="contact-section shell" id="contact" aria-labelledby="contact-title">

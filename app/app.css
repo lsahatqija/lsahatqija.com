@@ -220,6 +220,7 @@ p {
 }
 .hero-actions {
   display: flex;
+  flex-wrap: wrap;
   align-items: stretch;
   gap: 12px;
 }
@@ -787,7 +788,7 @@ p {
     font-size: clamp(3rem, 12vw, 4.5rem);
   }
   .hero-actions .dg-button {
-    width: calc((100% - 24px) / 3);
+    width: calc((100% - 12px) / 2);
     gap: 6px;
     padding-inline: 8px;
     font-size: 0.75rem;
