@@ -23,6 +23,17 @@ export const projects: Project[] = [
     color: "#d84a38",
   },
   {
+    id: "project-monthloom",
+    name: "Monthloom",
+    label: "Digital product",
+    description:
+      "A finance app for managing household finances together. As a progressive web app, it can also be installed on mobile devices.",
+    href: "https://monthloom.lsahatqija.com",
+    icon: "code",
+    mark: "05",
+    color: "#177d67",
+  },
+  {
     id: "project-raidio",
     name: "RaidiantFM",
     label: "Experiment",
@@ -56,16 +67,6 @@ export const projects: Project[] = [
     color: "#8f4f8f",
   },
 
-  {
-    id: "project-expensify",
-    name: "Expensify",
-    label: "Digital product",
-    description: "A work-in-progress web app for tracking expenses and managing budgets.",
-    href: "",
-    icon: "code",
-    mark: "05",
-    color: "#177d67",
-  },
   {
     id: "project-medikeep",
     name: "MediKeep",

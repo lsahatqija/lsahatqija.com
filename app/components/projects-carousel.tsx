@@ -10,6 +10,9 @@ const icons = {
   radio: Radio,
 };
 const tones = ["tone-teal", "tone-gold", "tone-pink", "tone-teal"];
+const projectTones: Record<string, string> = {
+  "project-evosystem": "tone-pink",
+};
 
 export function ProjectsCarousel({ projects }: { projects: Project[] }) {
   const trackRef = useRef<HTMLDivElement>(null);
@@ -71,7 +74,9 @@ export function ProjectsCarousel({ projects }: { projects: Project[] }) {
           const Icon = icons[project.icon];
           return (
             <article
-              className={`project-card dg-frame ${tones[projectIndex % tones.length]}`}
+              className={`project-card dg-frame ${
+                projectTones[project.id] ?? tones[projectIndex % tones.length]
+              }`}
               key={project.id}
               role="listitem"
             >
